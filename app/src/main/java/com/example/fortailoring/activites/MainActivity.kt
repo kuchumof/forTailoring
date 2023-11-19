@@ -3,6 +3,9 @@ package com.example.fortailoring.activites
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import androidx.fragment.app.add
+import androidx.fragment.app.commit
+import androidx.fragment.app.replace
 import com.example.fortailoring.R
 import com.example.fortailoring.databinding.ActivityMainBinding
 import com.example.fortailoring.fragments.FragmentManager
@@ -18,6 +21,13 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+        if (savedInstanceState == null) {
+            supportFragmentManager.commit {
+                setReorderingAllowed(true)
+                add<ProfileFragment>(R.id.placeHolder)
+            }
+        }
         setBottomNavListener()
 
     }
@@ -26,6 +36,8 @@ class MainActivity : AppCompatActivity() {
     * Отрисовка BottomNavigationView
     */
     private fun setBottomNavListener() {
+
+
         // фрагмент по умолчанию
         binding.bNavView.selectedItemId = R.id.my_profile_button
 
@@ -35,22 +47,42 @@ class MainActivity : AppCompatActivity() {
             when (it.itemId) {
                 //действие по кнопке
                 R.id.create_an_order_button -> {
-                    FragmentManager.setFragment(ItemOrderFragment.newInstance(), this)
+                    supportFragmentManager.commit {
+                        replace<ItemOrderFragment>(R.id.placeHolder)
+                        setReorderingAllowed(true)
+                        addToBackStack(null)
+                    }
+                    //FragmentManager.setFragment(ItemOrderFragment.newInstance(), this)
                     Log.d("MyLog", "create_an_order")
                 }
                 //действие по кнопке
                 R.id.work_examples_button -> {
-                    FragmentManager.setFragment(WorkExampleFragment.newInstance(), this)
+                    supportFragmentManager.commit {
+                        replace<WorkExampleFragment>(R.id.placeHolder)
+                        setReorderingAllowed(true)
+                        addToBackStack(null)
+                    }
+                    //FragmentManager.setFragment(WorkExampleFragment.newInstance(), this)
                     Log.d("MyLog", "work_examples")
                 }
                 //действие по кнопке
                 R.id.my_profile_button -> {
-                    FragmentManager.setFragment(ProfileFragment.newInstance(), this)
+                    supportFragmentManager.commit {
+                        replace<ProfileFragment>(R.id.placeHolder)
+                        setReorderingAllowed(true)
+                        addToBackStack(null)
+                    }
+                    //FragmentManager.setFragment(ProfileFragment.newInstance(), this)
                     Log.d("MyLog", "my_profile")
                 }
                 //действие по кнопке
                 R.id.more_button -> {
-                    FragmentManager.setFragment(MoreFragment.newInstance(), this)
+                    supportFragmentManager.commit {
+                        replace<MoreFragment>(R.id.placeHolder)
+                        setReorderingAllowed(true)
+                        addToBackStack(null)
+                    }
+                    //FragmentManager.setFragment(MoreFragment.newInstance(), this)
                     Log.d("MyLog", "more")
                 }
             }

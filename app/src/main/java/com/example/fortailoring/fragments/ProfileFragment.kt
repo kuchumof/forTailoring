@@ -9,9 +9,9 @@ import com.example.fortailoring.R
 import com.example.fortailoring.databinding.FragmentItemOrderBinding
 import com.example.fortailoring.databinding.FragmentProfileBinding
 
-class ProfileFragment : BaseFragment() {
+class ProfileFragment : Fragment() {
     private lateinit var binding: FragmentProfileBinding
-    override fun onClickNew() {
+    fun onClickNew() {
 
     }
 
