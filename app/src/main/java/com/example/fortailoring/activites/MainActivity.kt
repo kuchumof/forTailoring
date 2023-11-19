@@ -3,12 +3,13 @@ package com.example.fortailoring.activites
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
-import android.widget.Toast
-import androidx.fragment.app.Fragment
 import com.example.fortailoring.R
 import com.example.fortailoring.databinding.ActivityMainBinding
+import com.example.fortailoring.fragments.FragmentManager
 import com.example.fortailoring.fragments.ItemOrderFragment
-import com.example.fortailoring.fragments.ProfilFragment
+import com.example.fortailoring.fragments.MoreFragment
+import com.example.fortailoring.fragments.ProfileFragment
+import com.example.fortailoring.fragments.WorkExampleFragment
 
 class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
@@ -25,7 +26,7 @@ class MainActivity : AppCompatActivity() {
     * Отрисовка BottomNavigationView
     */
     private fun setBottomNavListener() {
-        // активити по умолчанию
+        // фрагмент по умолчанию
         binding.bNavView.selectedItemId = R.id.my_profile_button
 
         //слушатель нажатий
@@ -34,36 +35,27 @@ class MainActivity : AppCompatActivity() {
             when (it.itemId) {
                 //действие по кнопке
                 R.id.create_an_order_button -> {
-                    openFragment(ItemOrderFragment())
+                    FragmentManager.setFragment(ItemOrderFragment.newInstance(), this)
                     Log.d("MyLog", "create_an_order")
-                    Toast.makeText(this, "Создать заказ", Toast.LENGTH_SHORT).show()
                 }
                 //действие по кнопке
                 R.id.work_examples_button -> {
+                    FragmentManager.setFragment(WorkExampleFragment.newInstance(), this)
                     Log.d("MyLog", "work_examples")
-                    Toast.makeText(this, "Примеры работ", Toast.LENGTH_SHORT).show()
                 }
                 //действие по кнопке
                 R.id.my_profile_button -> {
-                    openFragment(ProfilFragment())
+                    FragmentManager.setFragment(ProfileFragment.newInstance(), this)
                     Log.d("MyLog", "my_profile")
-                    Toast.makeText(this, "Профиль", Toast.LENGTH_SHORT).show()
                 }
                 //действие по кнопке
                 R.id.more_button -> {
+                    FragmentManager.setFragment(MoreFragment.newInstance(), this)
                     Log.d("MyLog", "more")
-                    Toast.makeText(this, "Ещё", Toast.LENGTH_SHORT).show()
                 }
             }
             true
         }
-    }
-
-    private fun openFragment(fragment: Fragment) {
-        val fragmentTransaction = supportFragmentManager.beginTransaction()
-        fragmentTransaction.replace(R.id.placeHolder, fragment)
-        fragmentTransaction.addToBackStack(null)
-        fragmentTransaction.commit()
     }
 
 }

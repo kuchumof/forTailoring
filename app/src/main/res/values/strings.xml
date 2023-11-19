@@ -36,6 +36,8 @@
     <string name="length_from_waist_to_floor_side">Длина от талии до пола сбоку</string>
     <string name="length_from_waist_to_knee_side">Длина от талии до колена сбоку</string>
     <string name="length_of_the_product">Длина изделия</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 
 
 </resources>
