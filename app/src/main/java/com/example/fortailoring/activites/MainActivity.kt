@@ -3,6 +3,8 @@ package com.example.fortailoring.activites
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import androidx.fragment.app.add
+import androidx.fragment.app.commit
 import com.example.fortailoring.R
 import com.example.fortailoring.databinding.ActivityMainBinding
 import com.example.fortailoring.fragments.FragmentManager
@@ -19,6 +21,15 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
         setBottomNavListener()
+
+
+        /*отрисовка содержимого  дефолтного фаргмента*/
+        if (savedInstanceState == null) {
+            supportFragmentManager.commit {
+                setReorderingAllowed(true)
+                add<ProfileFragment>(R.id.placeHolder)
+            }
+        }
 
     }
 
