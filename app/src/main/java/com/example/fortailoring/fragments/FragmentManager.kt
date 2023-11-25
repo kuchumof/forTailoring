@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity
 import com.example.fortailoring.R
 
 object FragmentManager {
+
     private var currentFragment: BaseFragment? = null
 
     fun setFragment(newFragment: BaseFragment, activity: AppCompatActivity) {

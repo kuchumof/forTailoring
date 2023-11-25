@@ -1,4 +1,4 @@
-package com.example.fortailoring.activites
+package com.example.fortailoring.activities
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -14,6 +14,7 @@ import com.example.fortailoring.fragments.ProfileFragment
 import com.example.fortailoring.fragments.WorkExampleFragment
 
 class MainActivity : AppCompatActivity() {
+
     private lateinit var binding: ActivityMainBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -21,7 +22,6 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
         setBottomNavListener()
-
 
         /*отрисовка содержимого  дефолтного фаргмента*/
         if (savedInstanceState == null) {

@@ -1,7 +1,7 @@
 package com.example.fortailoring.data
 
 data class ProfilItem(
-    var image_id: Int,
+    var imageId: Int,
     var surname:String,
     var name:String,
     var patronymic:String,
