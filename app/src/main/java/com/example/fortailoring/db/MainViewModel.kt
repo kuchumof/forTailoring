@@ -1,7 +1,7 @@
 package com.example.fortailoring.db
 
 import androidx.lifecycle.*
-import com.example.fortailoring.entities.OrderListItem
+import com.example.fortailoring.entities.OrderItem
 import kotlinx.coroutines.launch
 import java.lang.IllegalArgumentException
 
@@ -10,9 +10,15 @@ class MainViewModel(database: MainDataBase) : ViewModel() {
 
     val dao = database.getDao()
 
-    val allItems: LiveData<List<OrderListItem>> = dao.getAllItems().asLiveData()
-    fun insertItem(item: OrderListItem) = viewModelScope.launch {
+    val allItems: LiveData<List<OrderItem>> = dao.getAllItems().asLiveData()
+    fun insertItem(item: OrderItem) = viewModelScope.launch {
         dao.insertItem(item)
+    }
+    fun updateItem(item: OrderItem) = viewModelScope.launch {
+        dao.updateItem(item)
+    }
+    fun deleteItem(id: Int) = viewModelScope.launch {
+        dao.deleteItem(id)
     }
 
     class MainViewModelFactory(val database: MainDataBase) : ViewModelProvider.Factory {

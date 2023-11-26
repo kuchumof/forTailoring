@@ -1,64 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/purple_200"
     tools:context=".fragments.ItemOrderFragment">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rcViewOrder"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="@color/black">
-
-        <TextView
-            android:id="@+id/tvTitle"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:text="@string/required_measurements"
-            style="@style/TextViewVariantsStyle"
-            android:textSize="20sp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.495"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <EditText
-            android:id="@+id/edHeight"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:ems="10"
-            android:hint="@string/height"
-            style="@style/TextViewVariantsStyle"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tvTitle" />
-
-        <EditText
-            android:id="@+id/edNeckCircumference"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:ems="10"
-            android:hint="@string/neck_circumference"
-            style="@style/TextViewVariantsStyle"
-            app:layout_constraintEnd_toEndOf="@+id/edHeight"
-            app:layout_constraintStart_toStartOf="@+id/edHeight"
-            app:layout_constraintTop_toBottomOf="@+id/edHeight" />
-
-        <EditText
-            android:id="@+id/edChestGirth1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:ems="10"
-            android:hint="@string/chest_girth1"
-            style="@style/TextViewVariantsStyle"
-            app:layout_constraintEnd_toEndOf="@+id/edNeckCircumference"
-            app:layout_constraintStart_toStartOf="@+id/edNeckCircumference"
-            app:layout_constraintTop_toBottomOf="@+id/edNeckCircumference" />
-
-    </androidx.constraintlayout.widget.ConstraintLayout>
+        android:layout_height="0dp" />
 </FrameLayout>

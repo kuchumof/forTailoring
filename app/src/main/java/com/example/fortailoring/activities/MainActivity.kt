@@ -46,7 +46,8 @@ class MainActivity : AppCompatActivity() {
             when (it.itemId) {
                 //действие по кнопке
                 R.id.create_an_order_button -> {
-                    FragmentManager.setFragment(ItemOrderFragment.newInstance(), this)
+                    /*FragmentManager.setFragment(ItemOrderFragment.newInstance(), this)*/
+                    FragmentManager.currentFragment?.onClickNew()
                     Log.d("MyLog", "create_an_order")
                 }
                 //действие по кнопке
