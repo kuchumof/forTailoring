@@ -17,8 +17,8 @@
     <string name="patronymic">Отчество</string>
     <string name="male">Пол</string>
     <string name="age">Возраст</string>
-    <string name="height">Рост</string>
 
+    <string name="height">Рост</string>
     <string name="neck_circumference">Обхват шеи</string>
     <string name="chest_girth1">Обхват груди1</string>
     <string name="chest_girth2">Обхват груди2</string>

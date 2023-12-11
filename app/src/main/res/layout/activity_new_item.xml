@@ -49,23 +49,23 @@
                     style="@style/TextViewVariantsStyle"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="8dp"
+                    android:layout_marginTop="24dp"
+                    android:layout_marginEnd="50dp"
                     android:ems="10"
                     android:hint="@string/height"
-                    app:layout_constraintEnd_toEndOf="@+id/tvTitle2"
-                    app:layout_constraintStart_toStartOf="@+id/tvTitle2"
+                    app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/tvTitle2" />
 
                 <TextView
                     android:id="@+id/tvHeight"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="62dp"
+                    android:layout_marginTop="38dp"
+                    android:layout_marginEnd="50dp"
                     android:text="@string/height"
                     android:textColor="@color/itemButtonNavigationViewTrue"
                     app:layout_constraintEnd_toStartOf="@+id/edHeight"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
+                    app:layout_constraintTop_toBottomOf="@+id/tvTitle2" />
 
                 <EditText
                     android:id="@+id/edNeckCircumference"
@@ -504,8 +504,6 @@
                     app:layout_constraintEnd_toEndOf="@+id/tvLengthFromWaistToKneeSide"
                     app:layout_constraintStart_toStartOf="@+id/tvLengthFromWaistToKneeSide"
                     app:layout_constraintTop_toBottomOf="@+id/tvLengthFromWaistToKneeSide" />
-
-
 
 
             </androidx.constraintlayout.widget.ConstraintLayout>

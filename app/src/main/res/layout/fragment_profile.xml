@@ -11,15 +11,71 @@
         android:layout_height="match_parent"
         android:background="@color/black">
 
+        <ImageView
+            android:id="@+id/ivAvatar"
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            android:layout_marginTop="24dp"
+            android:layout_marginEnd="24dp"
+            android:src="@drawable/defolt_avatar"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
         <TextView
-            android:id="@+id/textView3"
+            android:id="@+id/tvSurname"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="ПРОФИЛЬ"
-            style="@style/TextViewVariantsStyle"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginTop="32dp"
+            android:layout_marginEnd="100dp"
+            android:text="@string/surname"
+            android:textColor="@color/itemButtonNavigationViewTrue"
+            app:layout_constraintEnd_toStartOf="@+id/ivAvatar"
             app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tvName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="@string/name"
+            android:textColor="@color/itemButtonNavigationViewTrue"
+            app:layout_constraintEnd_toEndOf="@+id/tvSurname"
+            app:layout_constraintStart_toStartOf="@+id/tvSurname"
+            app:layout_constraintTop_toBottomOf="@+id/tvSurname" />
+
+        <TextView
+            android:id="@+id/tvPatronymic"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="@string/patronymic"
+            android:textColor="@color/itemButtonNavigationViewTrue"
+            app:layout_constraintEnd_toEndOf="@+id/tvName"
+            app:layout_constraintStart_toStartOf="@+id/tvName"
+            app:layout_constraintTop_toBottomOf="@+id/tvName" />
+
+        <TextView
+            android:id="@+id/tvMale"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="@string/male"
+            android:textColor="@color/itemButtonNavigationViewTrue"
+            app:layout_constraintEnd_toEndOf="@+id/tvPatronymic"
+            app:layout_constraintStart_toStartOf="@+id/tvPatronymic"
+            app:layout_constraintTop_toBottomOf="@+id/tvPatronymic" />
+
+        <TextView
+            android:id="@+id/tvAge"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="@string/age"
+            android:textColor="@color/itemButtonNavigationViewTrue"
+            app:layout_constraintEnd_toEndOf="@+id/tvMale"
+            app:layout_constraintStart_toStartOf="@+id/tvMale"
+            app:layout_constraintTop_toBottomOf="@+id/tvMale" />
+
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 </FrameLayout>
