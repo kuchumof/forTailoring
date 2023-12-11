@@ -30,7 +30,6 @@ class MainActivity : AppCompatActivity() {
                 add<ProfileFragment>(R.id.placeHolder)
             }
         }
-
     }
 
     /*
@@ -45,9 +44,9 @@ class MainActivity : AppCompatActivity() {
             //определение нажатой кнопки
             when (it.itemId) {
                 //действие по кнопке
-                R.id.create_an_order_button -> {
-                    /*FragmentManager.setFragment(ItemOrderFragment.newInstance(), this)*/
-                    FragmentManager.currentFragment?.onClickNew()
+                R.id.order_button -> {
+                    FragmentManager.setFragment(ItemOrderFragment.newInstance(), this)
+                    /*FragmentManager.currentFragment?.onClickNew()*/
                     Log.d("MyLog", "create_an_order")
                 }
                 //действие по кнопке

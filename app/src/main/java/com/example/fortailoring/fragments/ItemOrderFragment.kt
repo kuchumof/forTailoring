@@ -42,6 +42,7 @@ class ItemOrderFragment : BaseFragment(), ItemAdapter.Listener {
         })*/
     }
 
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -54,6 +55,14 @@ class ItemOrderFragment : BaseFragment(), ItemAdapter.Listener {
         super.onViewCreated(view, savedInstanceState)
         initRcView()
         observer()
+        initCreateAnOrderButton()
+    }
+
+    /**Обработка кнопки новый заказ "+"*/
+    private fun initCreateAnOrderButton() = with(binding) {
+        imCreateAnOrderButton.setOnClickListener {
+            FragmentManager.currentFragment?.onClickNew()
+        }
     }
 
     private fun initRcView() = with(binding) {
@@ -68,6 +77,7 @@ class ItemOrderFragment : BaseFragment(), ItemAdapter.Listener {
         })
     }
 
+    /*Обработка результата активности в которой происходит редактированние*/
     private fun onEditResult() {
         editLauncher = registerForActivityResult(
             ActivityResultContracts.StartActivityForResult()

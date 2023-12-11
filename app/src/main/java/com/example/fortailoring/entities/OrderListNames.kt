@@ -5,7 +5,7 @@ import androidx.room.Entity
 import androidx.room.PrimaryKey
 import java.io.Serializable
 
-@Entity(tableName = "order_list_names")
+/*@Entity(tableName = "order_list_names")
 data class OrderListNames(
     @PrimaryKey(autoGenerate = true)
     val id: Int?,
@@ -25,4 +25,4 @@ data class OrderListNames(
     @ColumnInfo(name = "itemsIds")
     val itemsIds: String
 
-) : Serializable
+) : Serializable*/

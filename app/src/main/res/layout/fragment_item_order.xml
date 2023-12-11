@@ -4,11 +4,34 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/purple_200"
+    android:background="@color/white"
     tools:context=".fragments.ItemOrderFragment">
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rcViewOrder"
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="0dp" />
+        android:layout_height="match_parent"
+        android:background="@color/black">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rcViewOrder"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            tools:layout_editor_absoluteX="0dp"
+            tools:layout_editor_absoluteY="0dp">
+
+        </androidx.recyclerview.widget.RecyclerView>
+
+        <ImageButton
+            android:id="@+id/imCreateAnOrderButton"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginBottom="16dp"
+            android:background="@null"
+            android:src="@drawable/ic_create_an_order_button"
+            app:layout_constraintBottom_toBottomOf="@+id/rcViewOrder"
+            app:layout_constraintEnd_toEndOf="@+id/rcViewOrder" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
 </FrameLayout>

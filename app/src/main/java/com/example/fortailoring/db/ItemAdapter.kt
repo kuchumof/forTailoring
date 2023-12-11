@@ -24,10 +24,10 @@ class ItemAdapter(private val listener: Listener) :
 
     class ItemHolder(view: View) : RecyclerView.ViewHolder(view) {
 
+        /**============================ТУТ ЕСТЬ ОШИБКА =======================================================================*/
         private val binding = OrderListItemBinding.bind(view)
         fun setData(item: OrderItem, listener: Listener) = with(binding) {
             tvTitle.text = item.title
-            tvDescription.text = item.content
             tvTime.text = item.time
             itemView.setOnClickListener {
                 listener.onClickItem(item)

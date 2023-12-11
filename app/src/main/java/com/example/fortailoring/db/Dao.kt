@@ -6,7 +6,7 @@ import androidx.room.Query
 import androidx.room.Update
 import com.example.fortailoring.entities.OrderItem
 import kotlinx.coroutines.flow.Flow
-
+/**Для записи и считывания из БД*/
 @Dao
 interface Dao {
 

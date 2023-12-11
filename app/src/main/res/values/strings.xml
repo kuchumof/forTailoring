@@ -1,6 +1,7 @@
 <resources>
     <string name="app_name">forTailoring</string>
     <string name="create_an_order_button">Создать заказ</string>
+    <string name="order_button">Заказы</string>
     <string name="work_examples_button">Примеры работ</string>
     <string name="my_profile_button">Мой профиль</string>
     <string name="more_button">Ещё</string>

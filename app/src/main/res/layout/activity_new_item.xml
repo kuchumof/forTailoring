@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/white"
+    android:background="@color/black"
     tools:context=".activities.NewItemActivity">
 
     <androidx.cardview.widget.CardView
@@ -14,67 +14,501 @@
         android:layout_marginTop="3dp"
         android:layout_marginEnd="3dp"
         android:layout_marginBottom="3dp"
-        android:background="@color/white"
+        android:background="@color/black"
         app:cardCornerRadius="4dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
-        <androidx.constraintlayout.widget.ConstraintLayout
+        <ScrollView
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:background="@color/white">
+            android:layout_height="match_parent">
 
-            <TextView
-                android:id="@+id/tvTitle2"
-                style="@style/TextViewVariantsStyle"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
-                android:text="@string/required_measurements"
-                android:textSize="20sp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.495"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/black">
 
-            <EditText
-                android:id="@+id/edHeight2"
-                style="@style/TextViewVariantsStyle"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
-                android:ems="10"
-                android:hint="@string/height"
-                app:layout_constraintEnd_toEndOf="@+id/tvTitle2"
-                app:layout_constraintStart_toStartOf="@+id/tvTitle2"
-                app:layout_constraintTop_toBottomOf="@+id/tvTitle2" />
 
-            <EditText
-                android:id="@+id/edNeckCircumference2"
-                style="@style/TextViewVariantsStyle"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
-                android:ems="10"
-                android:hint="@string/neck_circumference"
-                app:layout_constraintEnd_toEndOf="@+id/edHeight2"
-                app:layout_constraintStart_toStartOf="@+id/edHeight2"
-                app:layout_constraintTop_toBottomOf="@+id/edHeight2" />
+                <TextView
+                    android:id="@+id/tvTitle2"
+                    style="@style/TextViewVariantsStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:text="@string/required_measurements"
+                    android:textSize="20sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.495"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
 
-            <EditText
-                android:id="@+id/edChestGirth12"
-                style="@style/TextViewVariantsStyle"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
-                android:ems="10"
+                <EditText
+                    android:id="@+id/edHeight"
+                    style="@style/TextViewVariantsStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:ems="10"
+                    android:hint="@string/height"
+                    app:layout_constraintEnd_toEndOf="@+id/tvTitle2"
+                    app:layout_constraintStart_toStartOf="@+id/tvTitle2"
+                    app:layout_constraintTop_toBottomOf="@+id/tvTitle2" />
 
-                android:hint="@string/chest_girth1"
-                app:layout_constraintEnd_toEndOf="@+id/edNeckCircumference2"
-                app:layout_constraintStart_toStartOf="@+id/edNeckCircumference2"
-                app:layout_constraintTop_toBottomOf="@+id/edNeckCircumference2" />
-        </androidx.constraintlayout.widget.ConstraintLayout>
+                <TextView
+                    android:id="@+id/tvHeight"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="62dp"
+                    android:text="@string/height"
+                    android:textColor="@color/itemButtonNavigationViewTrue"
+                    app:layout_constraintEnd_toStartOf="@+id/edHeight"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <EditText
+                    android:id="@+id/edNeckCircumference"
+                    style="@style/TextViewVariantsStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:ems="10"
+                    android:hint="@string/neck_circumference"
+                    app:layout_constraintEnd_toEndOf="@+id/edHeight"
+                    app:layout_constraintStart_toStartOf="@+id/edHeight"
+                    app:layout_constraintTop_toBottomOf="@+id/edHeight" />
+
+                <TextView
+                    android:id="@+id/tvNeckCircumference"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="28dp"
+                    android:text="@string/neck_circumference"
+                    android:textColor="@color/itemButtonNavigationViewTrue"
+                    app:layout_constraintEnd_toEndOf="@+id/tvHeight"
+                    app:layout_constraintStart_toStartOf="@+id/tvHeight"
+                    app:layout_constraintTop_toBottomOf="@+id/tvHeight" />
+
+                <EditText
+                    android:id="@+id/edChestGirth1"
+                    style="@style/TextViewVariantsStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:ems="10"
+                    android:hint="@string/chest_girth1"
+                    app:layout_constraintEnd_toEndOf="@+id/edNeckCircumference"
+                    app:layout_constraintStart_toStartOf="@+id/edNeckCircumference"
+                    app:layout_constraintTop_toBottomOf="@+id/edNeckCircumference" />
+
+                <TextView
+                    android:id="@+id/tvChestGirth1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="28dp"
+                    android:text="@string/chest_girth1"
+                    android:textColor="@color/itemButtonNavigationViewTrue"
+                    app:layout_constraintEnd_toEndOf="@+id/tvNeckCircumference"
+                    app:layout_constraintStart_toStartOf="@+id/tvNeckCircumference"
+                    app:layout_constraintTop_toBottomOf="@+id/tvNeckCircumference" />
+
+                <EditText
+                    android:id="@+id/edChestGirth2"
+                    style="@style/TextViewVariantsStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:ems="10"
+                    android:hint="@string/chest_girth2"
+                    app:layout_constraintEnd_toEndOf="@+id/edChestGirth1"
+                    app:layout_constraintStart_toStartOf="@+id/edChestGirth1"
+                    app:layout_constraintTop_toBottomOf="@+id/edChestGirth1" />
+
+                <TextView
+                    android:id="@+id/tvChestGirth2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="28dp"
+                    android:text="@string/chest_girth2"
+                    android:textColor="@color/itemButtonNavigationViewTrue"
+                    app:layout_constraintEnd_toEndOf="@+id/tvChestGirth1"
+                    app:layout_constraintStart_toStartOf="@+id/tvChestGirth1"
+                    app:layout_constraintTop_toBottomOf="@+id/tvChestGirth1" />
+
+                <EditText
+                    android:id="@+id/edChestGirth3"
+                    style="@style/TextViewVariantsStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:ems="10"
+                    android:hint="@string/chest_girth3"
+                    app:layout_constraintEnd_toEndOf="@+id/edChestGirth2"
+                    app:layout_constraintStart_toStartOf="@+id/edChestGirth2"
+                    app:layout_constraintTop_toBottomOf="@+id/edChestGirth2" />
+
+                <TextView
+                    android:id="@+id/tvChestGirth3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="28dp"
+                    android:text="@string/chest_girth3"
+                    android:textColor="@color/itemButtonNavigationViewTrue"
+                    app:layout_constraintEnd_toEndOf="@+id/tvChestGirth2"
+                    app:layout_constraintStart_toStartOf="@+id/tvChestGirth2"
+                    app:layout_constraintTop_toBottomOf="@+id/tvChestGirth2" />
+
+                <EditText
+                    android:id="@+id/edThighCircumference"
+                    style="@style/TextViewVariantsStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:ems="10"
+                    android:hint="@string/thigh_circumference"
+                    app:layout_constraintEnd_toEndOf="@+id/edChestGirth3"
+                    app:layout_constraintStart_toStartOf="@+id/edChestGirth3"
+                    app:layout_constraintTop_toBottomOf="@+id/edChestGirth3" />
+
+                <TextView
+                    android:id="@+id/tvThighCircumference"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="28dp"
+                    android:text="@string/thigh_circumference"
+                    android:textColor="@color/itemButtonNavigationViewTrue"
+                    app:layout_constraintEnd_toEndOf="@+id/tvChestGirth3"
+                    app:layout_constraintStart_toStartOf="@+id/tvChestGirth3"
+                    app:layout_constraintTop_toBottomOf="@+id/tvChestGirth3" />
+
+                <EditText
+                    android:id="@+id/edShoulderWidth"
+                    style="@style/TextViewVariantsStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:ems="10"
+                    android:hint="@string/shoulder_width"
+                    app:layout_constraintEnd_toEndOf="@+id/edThighCircumference"
+                    app:layout_constraintStart_toStartOf="@+id/edThighCircumference"
+                    app:layout_constraintTop_toBottomOf="@+id/edThighCircumference" />
+
+                <TextView
+                    android:id="@+id/tvShoulderWidth"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="28dp"
+                    android:text="@string/shoulder_width"
+                    android:textColor="@color/itemButtonNavigationViewTrue"
+                    app:layout_constraintEnd_toEndOf="@+id/tvThighCircumference"
+                    app:layout_constraintStart_toStartOf="@+id/tvThighCircumference"
+                    app:layout_constraintTop_toBottomOf="@+id/tvThighCircumference" />
+
+                <EditText
+                    android:id="@+id/edArmLength"
+                    style="@style/TextViewVariantsStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:ems="10"
+                    android:hint="@string/arm_length"
+                    app:layout_constraintEnd_toEndOf="@+id/edShoulderWidth"
+                    app:layout_constraintStart_toStartOf="@+id/edShoulderWidth"
+                    app:layout_constraintTop_toBottomOf="@+id/edShoulderWidth" />
+
+                <TextView
+                    android:id="@+id/tvArmLength"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="28dp"
+                    android:text="@string/arm_length"
+                    android:textColor="@color/itemButtonNavigationViewTrue"
+                    app:layout_constraintEnd_toEndOf="@+id/tvShoulderWidth"
+                    app:layout_constraintStart_toStartOf="@+id/tvShoulderWidth"
+                    app:layout_constraintTop_toBottomOf="@+id/tvShoulderWidth" />
+
+                <EditText
+                    android:id="@+id/edShoulderGirth"
+                    style="@style/TextViewVariantsStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:ems="10"
+                    android:hint="@string/shoulder_girth"
+                    app:layout_constraintEnd_toEndOf="@+id/edArmLength"
+                    app:layout_constraintStart_toStartOf="@+id/edArmLength"
+                    app:layout_constraintTop_toBottomOf="@+id/edArmLength" />
+
+                <TextView
+                    android:id="@+id/tvShoulderGirth"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="28dp"
+                    android:text="@string/shoulder_girth"
+                    android:textColor="@color/itemButtonNavigationViewTrue"
+                    app:layout_constraintEnd_toEndOf="@+id/tvArmLength"
+                    app:layout_constraintStart_toStartOf="@+id/tvArmLength"
+                    app:layout_constraintTop_toBottomOf="@+id/tvArmLength" />
+
+                <EditText
+                    android:id="@+id/edWristCircumference"
+                    style="@style/TextViewVariantsStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:ems="10"
+                    android:hint="@string/wrist_circumference"
+                    app:layout_constraintEnd_toEndOf="@+id/edShoulderGirth"
+                    app:layout_constraintStart_toStartOf="@+id/edShoulderGirth"
+                    app:layout_constraintTop_toBottomOf="@+id/edShoulderGirth" />
+
+                <TextView
+                    android:id="@+id/tvWristCircumference"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="32dp"
+                    android:text="@string/wrist_circumference"
+                    android:textColor="@color/itemButtonNavigationViewTrue"
+                    app:layout_constraintEnd_toEndOf="@+id/tvShoulderGirth"
+                    app:layout_constraintStart_toStartOf="@+id/tvShoulderGirth"
+                    app:layout_constraintTop_toBottomOf="@+id/tvShoulderGirth" />
+
+                <EditText
+                    android:id="@+id/edChestWidth1"
+                    style="@style/TextViewVariantsStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:ems="10"
+                    android:hint="@string/chest_width1"
+                    app:layout_constraintEnd_toEndOf="@+id/edWristCircumference"
+                    app:layout_constraintStart_toStartOf="@+id/edWristCircumference"
+                    app:layout_constraintTop_toBottomOf="@+id/edWristCircumference" />
+
+                <TextView
+                    android:id="@+id/tvChestWidth1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="30dp"
+                    android:text="@string/chest_width1"
+                    android:textColor="@color/itemButtonNavigationViewTrue"
+                    app:layout_constraintEnd_toEndOf="@+id/tvWristCircumference"
+                    app:layout_constraintStart_toStartOf="@+id/tvWristCircumference"
+                    app:layout_constraintTop_toBottomOf="@+id/tvWristCircumference" />
+
+                <EditText
+                    android:id="@+id/edChestWidth2"
+                    style="@style/TextViewVariantsStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:ems="10"
+                    android:hint="@string/chest_width2"
+                    app:layout_constraintEnd_toEndOf="@+id/edChestWidth1"
+                    app:layout_constraintStart_toStartOf="@+id/edChestWidth1"
+                    app:layout_constraintTop_toBottomOf="@+id/edChestWidth1" />
+
+                <TextView
+                    android:id="@+id/tvChestWidth2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="28dp"
+                    android:text="@string/chest_width2"
+                    android:textColor="@color/itemButtonNavigationViewTrue"
+                    app:layout_constraintEnd_toEndOf="@+id/tvChestWidth1"
+                    app:layout_constraintStart_toStartOf="@+id/tvChestWidth1"
+                    app:layout_constraintTop_toBottomOf="@+id/tvChestWidth1" />
+
+                <EditText
+                    android:id="@+id/edChestHeight"
+                    style="@style/TextViewVariantsStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:ems="10"
+                    android:hint="@string/chest_height"
+                    app:layout_constraintEnd_toEndOf="@+id/edChestWidth2"
+                    app:layout_constraintStart_toStartOf="@+id/edChestWidth2"
+                    app:layout_constraintTop_toBottomOf="@+id/edChestWidth2" />
+
+                <TextView
+                    android:id="@+id/tvChestHeight"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="28dp"
+                    android:text="@string/chest_height"
+                    android:textColor="@color/itemButtonNavigationViewTrue"
+                    app:layout_constraintEnd_toEndOf="@+id/tvChestWidth2"
+                    app:layout_constraintStart_toStartOf="@+id/tvChestWidth2"
+                    app:layout_constraintTop_toBottomOf="@+id/tvChestWidth2" />
+
+                <EditText
+                    android:id="@+id/edFrontLengthToWaist"
+                    style="@style/TextViewVariantsStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:ems="10"
+                    android:hint="@string/front_length_to_waist"
+                    app:layout_constraintEnd_toEndOf="@+id/edChestHeight"
+                    app:layout_constraintStart_toStartOf="@+id/edChestHeight"
+                    app:layout_constraintTop_toBottomOf="@+id/edChestHeight" />
+
+                <TextView
+                    android:id="@+id/tvFrontLengthToWaist"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="30dp"
+                    android:text="@string/front_length_to_waist"
+                    android:textColor="@color/itemButtonNavigationViewTrue"
+                    app:layout_constraintEnd_toEndOf="@+id/tvChestHeight"
+                    app:layout_constraintStart_toStartOf="@+id/tvChestHeight"
+                    app:layout_constraintTop_toBottomOf="@+id/tvChestHeight" />
+
+                <EditText
+                    android:id="@+id/edBackWidth"
+                    style="@style/TextViewVariantsStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:ems="10"
+                    android:hint="@string/back_width"
+                    app:layout_constraintEnd_toEndOf="@+id/edFrontLengthToWaist"
+                    app:layout_constraintStart_toStartOf="@+id/edFrontLengthToWaist"
+                    app:layout_constraintTop_toBottomOf="@+id/edFrontLengthToWaist" />
+
+                <TextView
+                    android:id="@+id/tvBackWidth"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="28dp"
+                    android:text="@string/back_width"
+                    android:textColor="@color/itemButtonNavigationViewTrue"
+                    app:layout_constraintEnd_toEndOf="@+id/tvFrontLengthToWaist"
+                    app:layout_constraintStart_toStartOf="@+id/tvFrontLengthToWaist"
+                    app:layout_constraintTop_toBottomOf="@+id/tvFrontLengthToWaist" />
+
+                <EditText
+                    android:id="@+id/edBackLengthToWaist"
+                    style="@style/TextViewVariantsStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:ems="10"
+                    android:hint="@string/back_length_to_waist"
+                    app:layout_constraintEnd_toEndOf="@+id/edBackWidth"
+                    app:layout_constraintStart_toStartOf="@+id/edBackWidth"
+                    app:layout_constraintTop_toBottomOf="@+id/edBackWidth" />
+
+                <TextView
+                    android:id="@+id/tvBackLengthToWaist"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="30dp"
+                    android:text="@string/back_length_to_waist"
+                    android:textColor="@color/itemButtonNavigationViewTrue"
+                    app:layout_constraintEnd_toEndOf="@+id/tvBackWidth"
+                    app:layout_constraintStart_toStartOf="@+id/tvBackWidth"
+                    app:layout_constraintTop_toBottomOf="@+id/tvBackWidth" />
+
+                <EditText
+                    android:id="@+id/edShoulderHeightObliqueBack"
+                    style="@style/TextViewVariantsStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:ems="10"
+                    android:hint="@string/shoulder_height_oblique_back"
+                    app:layout_constraintEnd_toEndOf="@+id/edBackLengthToWaist"
+                    app:layout_constraintStart_toStartOf="@+id/edBackLengthToWaist"
+                    app:layout_constraintTop_toBottomOf="@+id/edBackLengthToWaist" />
+
+                <TextView
+                    android:id="@+id/tvShoulderHeightObliqueBack"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="30dp"
+                    android:text="@string/shoulder_height_oblique_back"
+                    android:textColor="@color/itemButtonNavigationViewTrue"
+                    app:layout_constraintEnd_toEndOf="@+id/tvBackLengthToWaist"
+                    app:layout_constraintStart_toStartOf="@+id/tvBackLengthToWaist"
+                    app:layout_constraintTop_toBottomOf="@+id/tvBackLengthToWaist" />
+
+                <EditText
+                    android:id="@+id/edLengthFromWaistToFloorSide"
+                    style="@style/TextViewVariantsStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:ems="10"
+                    android:hint="@string/length_from_waist_to_floor_side"
+                    app:layout_constraintEnd_toEndOf="@+id/edShoulderHeightObliqueBack"
+                    app:layout_constraintStart_toStartOf="@+id/edShoulderHeightObliqueBack"
+                    app:layout_constraintTop_toBottomOf="@+id/edShoulderHeightObliqueBack" />
+
+                <TextView
+                    android:id="@+id/tvLengthFromWaistToFloorSide"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="28dp"
+                    android:text="@string/length_from_waist_to_floor_side"
+                    android:textColor="@color/itemButtonNavigationViewTrue"
+                    app:layout_constraintEnd_toEndOf="@+id/tvShoulderHeightObliqueBack"
+                    app:layout_constraintStart_toStartOf="@+id/tvShoulderHeightObliqueBack"
+                    app:layout_constraintTop_toBottomOf="@+id/tvShoulderHeightObliqueBack" />
+
+                <EditText
+                    android:id="@+id/edLengthFromWaistToKneeSide"
+                    style="@style/TextViewVariantsStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:ems="10"
+                    android:hint="@string/length_from_waist_to_knee_side"
+                    app:layout_constraintEnd_toEndOf="@+id/edLengthFromWaistToFloorSide"
+                    app:layout_constraintStart_toStartOf="@+id/edLengthFromWaistToFloorSide"
+                    app:layout_constraintTop_toBottomOf="@+id/edLengthFromWaistToFloorSide" />
+
+                <TextView
+                    android:id="@+id/tvLengthFromWaistToKneeSide"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="30dp"
+                    android:text="@string/length_from_waist_to_knee_side"
+                    android:textColor="@color/itemButtonNavigationViewTrue"
+                    app:layout_constraintEnd_toEndOf="@+id/tvLengthFromWaistToFloorSide"
+                    app:layout_constraintStart_toStartOf="@+id/tvLengthFromWaistToFloorSide"
+                    app:layout_constraintTop_toBottomOf="@+id/tvLengthFromWaistToFloorSide" />
+
+
+                <EditText
+                    android:id="@+id/edLengthOfTheProduct"
+                    style="@style/TextViewVariantsStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:ems="10"
+                    android:hint="@string/length_of_the_product"
+                    app:layout_constraintEnd_toEndOf="@+id/edLengthFromWaistToKneeSide"
+                    app:layout_constraintStart_toStartOf="@+id/edLengthFromWaistToKneeSide"
+                    app:layout_constraintTop_toBottomOf="@+id/edLengthFromWaistToKneeSide" />
+
+                <TextView
+                    android:id="@+id/tvLengthOfTheProduct"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="28dp"
+                    android:text="@string/length_of_the_product"
+                    android:textColor="@color/itemButtonNavigationViewTrue"
+                    app:layout_constraintEnd_toEndOf="@+id/tvLengthFromWaistToKneeSide"
+                    app:layout_constraintStart_toStartOf="@+id/tvLengthFromWaistToKneeSide"
+                    app:layout_constraintTop_toBottomOf="@+id/tvLengthFromWaistToKneeSide" />
+
+
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </ScrollView>
     </androidx.cardview.widget.CardView>
 </androidx.constraintlayout.widget.ConstraintLayout>
