@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!--<style name="Widget.Material3.BottomNavigationView.ButtonNavigationMenu">
+        <item name="itemRippleColor">@color/ButtonNavigationMenuSelector</item>
+        <item name="android:height">0dp</item>
+    </style>-->
+
+    <style name="TextAppearance.AppCompat.ProfileTextStyle">
+        <item name="android:paddingTop">4dp</item>
+        <item name="android:textSize">14sp</item>
+    </style>
+
+    <style name="TextAppearance.AppCompat.ProfileTextStyle.Name">
+        <item name="android:paddingTop">4dp</item>
+        <item name="android:textSize">16sp</item>
+    </style>
+
+    <style name="TextAppearance.AppCompat.ProfileTextStyle.Surname">
+        <item name="android:textSize">18sp</item>
+    </style>
+
+    <style name="TextAppearance.AppCompat.OrderTextStyle">
+        <item name="android:textSize">18sp</item>
+        <item name="android:layout_marginTop">10dp</item>
+        <item name="android:layout_marginEnd">10dp</item>
+    </style>
+
+</resources>

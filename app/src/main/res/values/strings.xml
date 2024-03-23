@@ -1,0 +1,59 @@
+<resources>
+    <string name="app_name">forTailoring</string>
+
+    <string name="Order_button">Order</string>
+    <string name="WorkExamples_button">Work Examples</string>
+    <string name="Profile_button">Profile</string>
+    <string name="Settings_button">Settings</string>
+    <string name="Create_an_order_button">Create an order</string>
+
+    <string name="Light_Dark_mode">Mode Light/ Dark</string>
+
+    <string name="Accepted">Accepted</string>
+    <string name="Pass">Pass</string>
+
+
+    <string name="Done">Done</string>
+    <string name="Save">Save</string>
+    <string name="Delete">Delete</string>
+
+    <string name="Profile_icon">Иконка профиля</string>
+    <string name="Surname">Фамилия</string>
+    <string name="Name">Имя</string>
+    <string name="Patronymic">Отчество</string>
+    <string name="Phone_number">Номер телефона</string>
+    <string name="eMail">Почта</string>
+    <string name="Male">Пол</string>
+    <string name="Age">Возраст</string>
+
+    <string name="Dress">Dress</string>
+
+    <string name="Summer">Summer</string>
+    <string name="Winter">Winter</string>
+
+    <string name="required_measurements">Необходимые мерки</string>
+    <string name="height">Рост</string>
+    <string name="neck_circumference">Обхват шеи</string>
+    <string name="chest_girth1">Обхват груди1</string>
+    <string name="chest_girth2">Обхват груди2</string>
+    <string name="chest_girth3">Обхват груди3</string>
+    <string name="waist_circumference">Обхват талии</string>
+    <string name="thigh_circumference">Обхват бедра</string>
+    <string name="shoulder_width">Ширина плеча</string>
+    <string name="arm_length">Длина руки</string>
+    <string name="shoulder_girth">Обхват плеча</string>
+    <string name="wrist_circumference">Обхват запястья</string>
+    <string name="chest_width1">Ширина груди1</string>
+    <string name="chest_width2">Ширина груди2</string>
+    <string name="chest_height">Высота груди</string>
+    <string name="front_length_to_waist">Длина переда до талии</string>
+    <string name="back_width">Ширина спинки</string>
+    <string name="back_length_to_waist">Длина спины до талии</string>
+    <string name="shoulder_height_oblique_back">Высота плеча косая спинки</string>
+    <string name="length_from_waist_to_floor_side">Длина от талии до пола сбоку</string>
+    <string name="length_from_waist_to_knee_side">Длина от талии до колена сбоку</string>
+    <string name="length_of_the_product">Длина изделия</string>
+    <!-- TODO: Remove or change this placeholder text -->
+
+
+</resources>

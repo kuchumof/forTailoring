@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <data>
+        <variable
+            name="folder"
+            type="com.kuchumof.fortailoring.model.FolderItemModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/ivExampleFolder"
+            android:layout_width="96dp"
+            android:layout_height="96dp"
+            android:layout_margin="5dp"
+            android:src="@drawable/ic_folder"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tvExampleFolderText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:layout_marginEnd="5dp"
+            android:text="@{folder.name}"
+            app:layout_constraintEnd_toEndOf="@id/ivExampleFolder"
+            app:layout_constraintStart_toStartOf="@id/ivExampleFolder"
+            app:layout_constraintTop_toBottomOf="@id/ivExampleFolder" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>
+
+
