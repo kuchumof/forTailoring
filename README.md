@@ -16,7 +16,7 @@
 - Язык программирования: Kotlin
 - Архитектурный шаблон: MVVM(Model-View-ViewModel)
 - Ключевые компоненты интерфейса: RecyclerView, OptionsMenu, fragment
-- Вывод данных: ViewBinding
+- Вывод данных: viewBinding, dataBinding
 - СУБД: Room
 - Работа с сетью: Retrofit
 - Фоновое выполнение операций: Kotlin Coroutines
