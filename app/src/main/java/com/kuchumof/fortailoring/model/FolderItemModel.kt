@@ -5,6 +5,7 @@ import androidx.room.Entity
 import androidx.room.PrimaryKey
 import com.kuchumof.fortailoring.constant.SeasonEnum
 
+//Тестовый комментарий
 @Entity(tableName = "folders")
 data class FolderItemModel(
     /*TODO
