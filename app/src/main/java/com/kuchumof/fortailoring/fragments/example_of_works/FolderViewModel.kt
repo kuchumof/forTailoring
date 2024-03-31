@@ -6,6 +6,7 @@ import androidx.lifecycle.viewModelScope
 import com.kuchumof.fortailoring.db.AppDatabase
 import com.kuchumof.fortailoring.model.FolderItemModel
 import com.kuchumof.fortailoring.constant.SeasonEnum.*
+import com.kuchumof.fortailoring.repository.FolderRepository
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asStateFlow
@@ -15,6 +16,7 @@ import kotlinx.coroutines.launch
 class FolderViewModel(application: Application) : AndroidViewModel(application) {
 
     private val db = AppDatabase.getAppDatabase(application)
+    private val repository = FolderRepository(db.folderDao())
 
     /*private val listFolderItemModels = listOf(
         FolderItemModel(1, "Штаны", SUMMER),
@@ -60,12 +62,12 @@ class FolderViewModel(application: Application) : AndroidViewModel(application) 
                     FolderItemModel(8, "Худи", WINTER)
                 )
             )*/
-            db.folderDao().getAllSummer().collect { newItems ->
+            repository.getAllSummer().collect { newItems ->
                 _foldersSummer.update { newItems }
             }
         }
             viewModelScope.launch {
-            db.folderDao().getAllWinter().collect { newItems ->
+                repository.getAllWinter().collect { newItems ->
                 _foldersWinter.update { newItems }
             }
         }

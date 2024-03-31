@@ -45,4 +45,6 @@
     <string name="Winter">Зима</string>
     <string name="Pass">Сдать</string>
     <string name="Dress">Платья</string>
+    <string name="HOODIE">Худи</string>
+    <string name="T_SHIRT">Футболка</string>
 </resources>
