@@ -1,4 +1,4 @@
-package com.kuchumof.fortailoring.fragments
+package com.kuchumof.fortailoring.fragments.profile
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment

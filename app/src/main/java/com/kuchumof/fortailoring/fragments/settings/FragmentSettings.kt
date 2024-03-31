@@ -1,4 +1,4 @@
-package com.kuchumof.fortailoring.fragments
+package com.kuchumof.fortailoring.fragments.settings
 
 import android.os.Bundle
 import androidx.preference.PreferenceFragmentCompat

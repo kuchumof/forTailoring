@@ -20,7 +20,6 @@ class FragmentWorkExample : Fragment() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
     }
 
     fun setOnClickFActionButton () {

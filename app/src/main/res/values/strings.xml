@@ -27,6 +27,15 @@
     <string name="Age">Возраст</string>
 
     <string name="Dress">Dress</string>
+    <string name="HOODIE">HOODIE</string>
+    <string name="PANTS">PANTS</string>
+    <string name="BLOUSE">BLOUSE</string>
+    <string name="T_SHIRT">T_SHIRT</string>
+    <string name="SKIRT">SKIRT</string>
+    <string name="HAT">HAT</string>
+    <string name="SUIT">SUIT</string>
+
+
 
     <string name="Summer">Summer</string>
     <string name="Winter">Winter</string>

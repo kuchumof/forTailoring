@@ -4,9 +4,9 @@ import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.FragmentTransaction
 import com.kuchumof.fortailoring.databinding.ActivityMainBinding
-import com.kuchumof.fortailoring.fragments.FragmentOrder
-import com.kuchumof.fortailoring.fragments.FragmentProfile
-import com.kuchumof.fortailoring.fragments.FragmentSettings
+import com.kuchumof.fortailoring.fragments.order.FragmentOrder
+import com.kuchumof.fortailoring.fragments.profile.FragmentProfile
+import com.kuchumof.fortailoring.fragments.settings.FragmentSettings
 import com.kuchumof.fortailoring.fragments.example_of_works.FragmentWorkExample
 
 

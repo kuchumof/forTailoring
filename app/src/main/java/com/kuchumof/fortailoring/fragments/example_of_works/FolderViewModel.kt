@@ -2,16 +2,13 @@ package com.kuchumof.fortailoring.fragments.example_of_works
 
 import android.app.Application
 import androidx.lifecycle.AndroidViewModel
-import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.kuchumof.fortailoring.db.AppDatabase
 import com.kuchumof.fortailoring.model.FolderItemModel
-import com.kuchumof.fortailoring.model.SeasonEnum.SUMMER
-import com.kuchumof.fortailoring.model.SeasonEnum.WINTER
+import com.kuchumof.fortailoring.constant.SeasonEnum.*
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asStateFlow
-import kotlinx.coroutines.flow.stateIn
 import kotlinx.coroutines.flow.update
 import kotlinx.coroutines.launch
 

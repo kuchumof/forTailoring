@@ -1,101 +1,116 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:layout_margin="3dp"
-    app:cardCornerRadius="10dp"
-    app:cardElevation="10dp">
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <data>
+        <variable
+            name="order"
+            type="com.kuchumof.fortailoring.model.OrderItemModel" />
+    </data>
 
-    <androidx.constraintlayout.widget.ConstraintLayout
+
+    <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:layout_margin="3dp"
+        app:cardCornerRadius="10dp"
+        app:cardElevation="10dp">
 
-        <TextView
-            android:id="@+id/tvIdOrder"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginVertical="15dp"
-            android:layout_marginStart="5dp"
-            android:text="000"
-            android:textSize="18sp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
 
-        <TextView
-            android:id="@+id/tvSurname"
-            style="@style/TextAppearance.AppCompat.OrderTextStyle"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="10dp"
-            android:ellipsize="end"
-            android:singleLine="true"
-            android:text="ИвановИвановИвановИванов.И.И"
-            app:layout_constrainedWidth="true"
-            app:layout_constraintEnd_toStartOf="@id/tvAccepted"
-            app:layout_constraintHorizontal_bias="0"
-            app:layout_constraintStart_toEndOf="@id/tvIdOrder"
-            app:layout_constraintTop_toTopOf="parent" />
+            <TextView
+                android:id="@+id/tvIdOrder"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="15dp"
+                android:layout_marginStart="5dp"
+                android:text="@{Integer.toString(order.idOrder)}"
+                android:textSize="18sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
 
-        <TextView
-            android:id="@+id/tvTypeOfClothes"
-            style="@style/TextAppearance.AppCompat.OrderTextStyle"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="5dp"
-            android:layout_marginBottom="10dp"
-            android:ellipsize="end"
-            android:singleLine="true"
-            android:text="ПлатьеПлатьеПлатьеПлатьеПлатье"
-            app:layout_constrainedWidth="true"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toStartOf="@id/tvPass"
-            app:layout_constraintHorizontal_bias="0"
-            app:layout_constraintStart_toStartOf="@id/tvSurname"
-            app:layout_constraintTop_toBottomOf="@id/tvSurname" />
+            <TextView
+                android:id="@+id/tvSurname"
+                style="@style/TextAppearance.AppCompat.OrderTextStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:ellipsize="end"
+                android:singleLine="true"
+                android:text="@{order.idUserOrder}"
+                app:layout_constrainedWidth="true"
+                app:layout_constraintEnd_toStartOf="@id/tvAccepted"
+                app:layout_constraintHorizontal_bias="0"
+                app:layout_constraintStart_toEndOf="@id/tvIdOrder"
+                app:layout_constraintTop_toTopOf="parent" />
 
-        <TextView
-            android:id="@+id/tvDataStartOrder"
-            style="@style/TextAppearance.AppCompat.OrderTextStyle"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="02.03.2024"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            <TextView
+                android:id="@+id/tvTypeOfClothes"
+                style="@style/TextAppearance.AppCompat.OrderTextStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="10dp"
+                android:ellipsize="end"
+                android:singleLine="true"
+                android:text="@{order.idTypeOfClothes}"
+                app:layout_constrainedWidth="true"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/tvPass"
+                app:layout_constraintHorizontal_bias="0"
+                app:layout_constraintStart_toStartOf="@id/tvSurname"
+                app:layout_constraintTop_toBottomOf="@id/tvSurname" />
 
-        <TextView
-            android:id="@+id/tvDataEndOrder"
-            style="@style/TextAppearance.AppCompat.OrderTextStyle"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="5dp"
-            android:layout_marginBottom="10dp"
-            android:text="02.04.2024"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toStartOf="@id/tvDataStartOrder"
-            app:layout_constraintTop_toBottomOf="@id/tvDataStartOrder" />
+            <TextView
+                android:id="@+id/tvDataStartOrder"
+                style="@style/TextAppearance.AppCompat.OrderTextStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@{order.dateStartOrder}"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
 
-        <TextView
-            android:id="@+id/tvAccepted"
-            style="@style/TextAppearance.AppCompat.OrderTextStyle"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/Accepted"
-            app:layout_constraintEnd_toStartOf="@id/tvDataStartOrder"
-            app:layout_constraintTop_toTopOf="parent" />
+            <TextView
+                android:id="@+id/tvDataEndOrder"
+                style="@style/TextAppearance.AppCompat.OrderTextStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="10dp"
+                android:text="@{order.dateEndOrder}"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="@id/tvDataStartOrder"
+                app:layout_constraintTop_toBottomOf="@id/tvDataStartOrder" />
 
-        <TextView
-            android:id="@+id/tvPass"
-            style="@style/TextAppearance.AppCompat.OrderTextStyle"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="5dp"
-            android:layout_marginBottom="10dp"
-            android:text="@string/Pass"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toStartOf="@id/tvAccepted"
-            app:layout_constraintTop_toBottomOf="@id/tvAccepted" />
+            <TextView
+                android:id="@+id/tvAccepted"
+                style="@style/TextAppearance.AppCompat.OrderTextStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/Accepted"
+                app:layout_constraintEnd_toStartOf="@id/tvDataStartOrder"
+                app:layout_constraintTop_toTopOf="parent" />
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
-</androidx.cardview.widget.CardView>
+            <TextView
+                android:id="@+id/tvPass"
+                style="@style/TextAppearance.AppCompat.OrderTextStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="10dp"
+                android:text="@string/Pass"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="@id/tvAccepted"
+                app:layout_constraintTop_toBottomOf="@id/tvAccepted" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+</layout>
+
+
+
+
+
+

@@ -21,5 +21,4 @@ interface FolderDao {
 
     @Delete
     suspend fun delete(user: FolderItemModel)
-
 }

@@ -2,51 +2,47 @@ package com.kuchumof.fortailoring.adapter
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import androidx.databinding.DataBindingUtil
+import androidx.recyclerview.widget.DiffUtil
+import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
+import com.kuchumof.fortailoring.BR
+import com.kuchumof.fortailoring.R
 import com.kuchumof.fortailoring.databinding.OrderItemBinding
 import com.kuchumof.fortailoring.model.OrderItemModel
 
-
-/**
- * @param dataSet - список элементов данных для отображения.
- */
-class OrderAdapter(private val dataSet: List<OrderItemModel>) :
-    RecyclerView.Adapter<OrderAdapter.OrderHolder>() {
-
+class OrderListAdapter :
+    ListAdapter<OrderItemModel, OrderListAdapter.OrderViewHolder>(OrderDiffCallback()) {
 
     /**
      * Класс отвечает за хранение ссылок на элементы интерфейса для отображения одного элемента данных.
      * @param itemBinding - экземпляр сгенерированного класса, позволяющего проще обращаться к эл-ам интерфейса.
      */
-    class OrderHolder(private val itemBinding: OrderItemBinding) :
+    class OrderViewHolder(private val itemBinding: OrderItemBinding) :
         RecyclerView.ViewHolder(itemBinding.root) {
 
         /**
          * Метод отвечает за вывод на экран одного элемента данных.
          * @param orderItemModel - элемент данных, который выводится на экран.
          */
-        fun bind(orderItemModel: OrderItemModel)= with(itemBinding){
-            tvIdOrder.text = orderItemModel.idOrder.toString()
-            tvSurname.text = orderItemModel.idUserOrder
-            tvTypeOfClothes.text = orderItemModel.idTypeOfClothes
-            tvDataStartOrder.text = orderItemModel.dateStartOrder
-            tvDataEndOrder.text = orderItemModel.dateEndOrder
-
+        fun bind(order: OrderItemModel) = with(itemBinding) {
+            setVariable(BR.order, order)
         }
     }
 
     /**
      * Метод вызывается при создании новой карточки в списке.
      */
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): OrderHolder {
+    override fun onCreateViewHolder(viewGroup: ViewGroup, viewType: Int): OrderViewHolder {
         //Считываются элементы графического интерфейса,
         //ссылки записываются в переменную itemBinding.
-        val itemBinding = OrderItemBinding.inflate(
-            LayoutInflater.from(parent.context),
-            parent,
+        val itemBinding: OrderItemBinding = DataBindingUtil.inflate(
+            LayoutInflater.from(viewGroup.context),
+            R.layout.order_item,
+            viewGroup,
             false
         )
-        return OrderHolder(itemBinding)
+        return OrderViewHolder(itemBinding)
     }
 
     /**
@@ -54,14 +50,25 @@ class OrderAdapter(private val dataSet: List<OrderItemModel>) :
      * @param OrderHolder - ссылка на старую карточку.
      * @param position - порядковый номер нового элемента данных для вывода.
      */
-    override fun onBindViewHolder(orderHolder: OrderHolder, position: Int) {
-        orderHolder.bind(dataSet[position])
+    override fun onBindViewHolder(orderViewHolder: OrderViewHolder, position: Int) {
+        orderViewHolder.bind(getItem(position))
     }
 
     /**
      * Возвращает полное кол-во элементов в списке
      */
     override fun getItemCount(): Int {
-        return dataSet.size
+        return currentList.size
+    }
+
+    private class OrderDiffCallback : DiffUtil.ItemCallback<OrderItemModel>() {
+
+        override fun areItemsTheSame(oldItem: OrderItemModel, newItem: OrderItemModel): Boolean {
+            return oldItem.idOrder == newItem.idOrder
+        }
+
+        override fun areContentsTheSame(oldItem: OrderItemModel, newItem: OrderItemModel): Boolean {
+            return oldItem == newItem
+        }
     }
 }
