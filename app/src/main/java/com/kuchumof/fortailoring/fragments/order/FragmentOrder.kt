@@ -17,9 +17,9 @@ import kotlinx.coroutines.launch
 
 class FragmentOrder : Fragment() {
 
-    private var _binding: FragmentOrderBinding?=null
-    private val binding get() = _binding!!
+    private lateinit var binding: FragmentOrderBinding
     private var adapter = OrderListAdapter()
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
     }
@@ -28,13 +28,20 @@ class FragmentOrder : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        _binding = FragmentOrderBinding.inflate(inflater, container, false)
+        binding = FragmentOrderBinding.inflate(inflater, container, false)
+
+        //Установка менеджера макета - для RecyclerView
         binding.rcOrder.layoutManager = LinearLayoutManager(context)
+
         //Установка адаптера RecyclerView c использованием OrderListAdapter
         binding.rcOrder.adapter = adapter
+
+        //Получение ссылки на экземпляр класса OrderViewModel
         val viewModel: OrderViewModel by viewModels()
+        //Подписка на изменение списка
         lifecycleScope.launch {
             repeatOnLifecycle(Lifecycle.State.STARTED) {
+                /**@param collect - метод возвращает последнее актуальное состояние списка */
                 viewModel.orders.collect {
                     adapter.submitList(it)
                 }

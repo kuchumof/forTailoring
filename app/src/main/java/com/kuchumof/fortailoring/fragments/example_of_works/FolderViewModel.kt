@@ -16,20 +16,7 @@ import kotlinx.coroutines.launch
 class FolderViewModel(application: Application) : AndroidViewModel(application) {
 
     private val db = AppDatabase.getAppDatabase(application)
-    private val repository = FolderRepository(db.folderDao())
-
-    /*private val listFolderItemModels = listOf(
-        FolderItemModel(1, "Штаны", SUMMER),
-        FolderItemModel(2, "Платья", SUMMER),
-        FolderItemModel(3, "Блузки", SUMMER),
-        FolderItemModel(4, "Футболки", SUMMER),
-        FolderItemModel(5, "Юбки", SUMMER),
-
-        FolderItemModel(1, "Штаны", WINTER),
-        FolderItemModel(2, "Костюмы", WINTER),
-        FolderItemModel(3, "Худи", WINTER)
-
-    )*/
+    private val repositoryFolder = FolderRepository(db.folderDao())
 
     //Обёртка для автоматического отслеживания изменения в данных в списке
     /**@param listFolderItemModels.filter - фильтрация элемента в списке*/
@@ -62,12 +49,12 @@ class FolderViewModel(application: Application) : AndroidViewModel(application) 
                     FolderItemModel(8, "Худи", WINTER)
                 )
             )*/
-            repository.getAllSummer().collect { newItems ->
+            repositoryFolder.getAllSummer().collect { newItems ->
                 _foldersSummer.update { newItems }
             }
         }
             viewModelScope.launch {
-                repository.getAllWinter().collect { newItems ->
+                repositoryFolder.getAllWinter().collect { newItems ->
                 _foldersWinter.update { newItems }
             }
         }
