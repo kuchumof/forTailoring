@@ -12,7 +12,6 @@ data class FolderItemModel(
     @PrimaryKey /*(autoGenerate = true)*/
     val id: Int,
 
-    // для проверки
     @ColumnInfo(name = "name")
     val name: String,
 

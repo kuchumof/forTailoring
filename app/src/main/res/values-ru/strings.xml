@@ -41,10 +41,15 @@
     <string name="length_from_waist_to_floor_side">Длина от талии до пола сбоку</string>
     <string name="length_from_waist_to_knee_side">Длина от талии до колена сбоку</string>
     <string name="length_of_the_product">Длина изделия</string>
+    <string name="SKIRT">Юбка</string>
+    <string name="HAT">Шапка</string>
+    <string name="SUIT">Костюм</string>
     <string name="Summer">Лето</string>
     <string name="Winter">Зима</string>
     <string name="Pass">Сдать</string>
     <string name="Dress">Платья</string>
     <string name="HOODIE">Худи</string>
+    <string name="PANTS">Брюки</string>
+    <string name="BLOUSE">Блузка</string>
     <string name="T_SHIRT">Футболка</string>
 </resources>
