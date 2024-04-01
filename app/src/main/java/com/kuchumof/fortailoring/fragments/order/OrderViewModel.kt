@@ -1,6 +1,8 @@
 package com.kuchumof.fortailoring.fragments.order
 
 import androidx.lifecycle.ViewModel
+import com.kuchumof.fortailoring.constant.TypeOfClothEnum
+import com.kuchumof.fortailoring.constant.TypeOfClothEnum.*
 import com.kuchumof.fortailoring.model.OrderItemModel
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
@@ -14,35 +16,35 @@ class OrderViewModel : ViewModel() {
         OrderItemModel(
             101,
             "Петров П.П.",
-            "ШтаныШтаныШтаныШтаныШтаныШтаныШтаныШтаны",
+            DRESS,
             getCurrentTime(),
             "31.31.2025"
         ),
         OrderItemModel(
             102,
             "ИвановИвановИвановИвановИвановИвановИвановИвановИванов ",
-            "Штаны",
+            SKIRT,
             getCurrentTime(),
             "31.31.2026"
         ),
         OrderItemModel(
             103,
             "Дураков С.С.",
-            "Платья",
+            PANTS,
             getCurrentTime(),
             "31.31.2028"
         ),
         OrderItemModel(
             104,
             "Бездельников А.А.",
-            "Штаны",
+            HOODIE,
             "01.01.2029",
             "31.31.2030"
         ),
         OrderItemModel(
             105,
             "Сухов К.Н.",
-            "Штаны",
+            T_SHIRT,
             getCurrentTime(),
             "31.31.2032"
         )
