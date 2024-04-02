@@ -24,6 +24,7 @@ class FragmentSummerForWE : Fragment() {
     ): View? {
         binding = FragmentSummerForWEBinding.inflate(inflater, container, false)
 
+
         //Установка менеджера макета - сетка для RecyclerView с тремя столбцами
         binding.rcViewExampleSummer.layoutManager = GridLayoutManager(context, 3)
 

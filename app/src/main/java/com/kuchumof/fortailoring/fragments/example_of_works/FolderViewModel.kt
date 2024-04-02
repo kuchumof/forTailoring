@@ -3,15 +3,18 @@ package com.kuchumof.fortailoring.fragments.example_of_works
 import android.app.Application
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.viewModelScope
+import com.kuchumof.fortailoring.constant.SeasonEnum
 import com.kuchumof.fortailoring.db.AppDatabase
 import com.kuchumof.fortailoring.model.FolderItemModel
 import com.kuchumof.fortailoring.constant.SeasonEnum.*
+import com.kuchumof.fortailoring.constant.TypeOfClothEnum
 import com.kuchumof.fortailoring.repository.FolderRepository
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.flow.update
 import kotlinx.coroutines.launch
+import java.util.UUID
 
 class FolderViewModel(application: Application) : AndroidViewModel(application) {
 
@@ -33,40 +36,26 @@ class FolderViewModel(application: Application) : AndroidViewModel(application) 
     val foldersWinter: StateFlow<List<FolderItemModel>> = _foldersWinter.asStateFlow()
 
     init {
-
         viewModelScope.launch {
-
-            /*db.folderDao().insertAll(
-                listOf(
-                    FolderItemModel(1, "Штаны", SUMMER),
-                    FolderItemModel(2, "Платья", SUMMER),
-                    FolderItemModel(3, "Блузки", SUMMER),
-                    FolderItemModel(4, "Футболки", SUMMER),
-                    FolderItemModel(5, "Юбки", SUMMER),
-
-                    FolderItemModel(6, "Штаны", WINTER),
-                    FolderItemModel(7, "Костюмы", WINTER),
-                    FolderItemModel(8, "Худи", WINTER)
-                )
-            )*/
             repositoryFolder.getAllSummer().collect { newItems ->
                 _foldersSummer.update { newItems }
             }
         }
-            viewModelScope.launch {
-                repositoryFolder.getAllWinter().collect { newItems ->
+        viewModelScope.launch {
+            repositoryFolder.getAllWinter().collect { newItems ->
                 _foldersWinter.update { newItems }
             }
         }
     }
 
-    /*fun addFolder() {
-        _uiState.update { currentState ->
-            currentState.copy(
-                firstDieValue = Random.nextInt(from = 1, until = 7),
-                secondDieValue = Random.nextInt(from = 1, until = 7),
-                numberOfRolls = currentState.numberOfRolls + 1,
+    fun addFolder(season: SeasonEnum) {
+        viewModelScope.launch {
+            repositoryFolder.insertAll(
+                listOf(
+                    FolderItemModel(UUID.randomUUID(), "Худи", season)
+                )
             )
         }
-    }*/
+    }
+
 }
