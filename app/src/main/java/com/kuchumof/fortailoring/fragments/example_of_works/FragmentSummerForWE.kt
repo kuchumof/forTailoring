@@ -12,10 +12,15 @@ import androidx.lifecycle.repeatOnLifecycle
 import androidx.recyclerview.widget.GridLayoutManager
 import com.kuchumof.fortailoring.adapter.FolderListAdapter
 import com.kuchumof.fortailoring.databinding.FragmentSummerForWEBinding
+import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.launch
+import javax.inject.Inject
 
+@AndroidEntryPoint
 class FragmentSummerForWE : Fragment() {
 
+    @Inject
+    lateinit var folderViewModel: FolderViewModel
     private lateinit var binding: FragmentSummerForWEBinding
     private var adapter = FolderListAdapter()
 
@@ -23,7 +28,6 @@ class FragmentSummerForWE : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?
     ): View? {
         binding = FragmentSummerForWEBinding.inflate(inflater, container, false)
-
 
         //Установка менеджера макета - сетка для RecyclerView с тремя столбцами
         binding.rcViewExampleSummer.layoutManager = GridLayoutManager(context, 3)
@@ -33,6 +37,7 @@ class FragmentSummerForWE : Fragment() {
 
         //Получение ссылки на экземпляр класса FolderViewModel
         val viewModel: FolderViewModel by viewModels()
+
         //Подписка на изменение списка
         lifecycleScope.launch {
             repeatOnLifecycle(Lifecycle.State.STARTED) {

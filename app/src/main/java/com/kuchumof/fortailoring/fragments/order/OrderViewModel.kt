@@ -28,81 +28,81 @@ class OrderViewModel(application: Application) : AndroidViewModel(application) {
     init {
         viewModelScope.launch {
 
-            /*db.orderItemDao().insertAllOrderItem(
+            db.orderItemDao().insertAllOrderItem(
                 listOf(
                     OrderItemModel(
-                        101,
-                        "Петров П.П.",
-                        DRESS,
-                        getCurrentTime(),
-                        "31.31.2025"
+                        idOrder = 101,
+                        idUserOrder = "Петров П.П.",
+                        idTypeOfClothes = DRESS,
+                        dateStartOrder = getCurrentTime(),
+                        dateEndOrder = "31.31.2025"
                     ),
                     OrderItemModel(
-                        102,
-                        "ИвановИвановИвановИвановИвановИвановИвановИвановИванов ",
-                        HOODIE,
-                        getCurrentTime(),
-                        "31.31.2026"
+                        idOrder = 102,
+                        idUserOrder = "ИвановИвановИвановИвановИвановИвановИвановИвановИванов ",
+                        idTypeOfClothes = HOODIE,
+                        dateStartOrder = getCurrentTime(),
+                        dateEndOrder = "31.31.2026"
                     ),
                     OrderItemModel(
-                        103,
-                        "ИвановИвановИвановИвановИвановИвановИвановИвановИванов ",
-                        PANTS,
-                        getCurrentTime(),
-                        "31.31.2026"
+                        idOrder = 103,
+                        idUserOrder = "ИвановИвановИвановИвановИвановИвановИвановИвановИванов ",
+                        idTypeOfClothes = PANTS,
+                        dateStartOrder = getCurrentTime(),
+                        dateEndOrder = "31.31.2026"
                     ),
                     OrderItemModel(
-                        104,
-                        "ИвановИвановИвановИвановИвановИвановИвановИвановИванов ",
-                        BLOUSE,
-                        getCurrentTime(),
-                        "31.31.2026"
+                        idOrder = 104,
+                        idUserOrder = "ИвановИвановИвановИвановИвановИвановИвановИвановИванов ",
+                        idTypeOfClothes = BLOUSE,
+                        dateStartOrder = getCurrentTime(),
+                        dateEndOrder = "31.31.2026"
                     ),
                     OrderItemModel(
-                        105,
-                        "ИвановИвановИвановИвановИвановИвановИвановИвановИванов ",
-                        T_SHIRT,
-                        getCurrentTime(),
-                        "31.31.2026"
+                        idOrder = 105,
+                        idUserOrder = "ИвановИвановИвановИвановИвановИвановИвановИвановИванов ",
+                        idTypeOfClothes = T_SHIRT,
+                        dateStartOrder = getCurrentTime(),
+                        dateEndOrder = "31.31.2026"
                     ),
                     OrderItemModel(
-                        106,
-                        "ИвановИвановИвановИвановИвановИвановИвановИвановИванов ",
-                        SKIRT,
-                        getCurrentTime(),
-                        "31.31.2026"
+                        idOrder = 106,
+                        idUserOrder = "ИвановИвановИвановИвановИвановИвановИвановИвановИванов ",
+                        idTypeOfClothes = SKIRT,
+                        dateStartOrder = getCurrentTime(),
+                        dateEndOrder = "31.31.2026"
                     ),
                     OrderItemModel(
-                        107,
-                        "ИвановИвановИвановИвановИвановИвановИвановИвановИванов ",
-                        HAT,
-                        getCurrentTime(),
-                        "31.31.2026"
+                        idOrder = 107,
+                        idUserOrder = "ИвановИвановИвановИвановИвановИвановИвановИвановИванов ",
+                        idTypeOfClothes = HAT,
+                        dateStartOrder = getCurrentTime(),
+                        dateEndOrder = "31.31.2026"
                     ),
                     OrderItemModel(
-                        108,
-                        "ИвановИвановИвановИвановИвановИвановИвановИвановИванов ",
-                        SUIT,
-                        getCurrentTime(),
-                        "31.31.2026"
+                        idOrder = 108,
+                        idUserOrder = "ИвановИвановИвановИвановИвановИвановИвановИвановИванов ",
+                        idTypeOfClothes = SUIT,
+                        dateStartOrder = getCurrentTime(),
+                        dateEndOrder = "31.31.2026"
                     ),
                     OrderItemModel(
-                        109,
-                        "ИвановИвановИвановИвановИвановИвановИвановИвановИванов ",
-                        SUIT,
-                        getCurrentTime(),
-                        "31.31.2026"
+                        idOrder = 109,
+                        idUserOrder = "ИвановИвановИвановИвановИвановИвановИвановИвановИванов ",
+                        idTypeOfClothes = SUIT,
+                        dateStartOrder = getCurrentTime(),
+                        dateEndOrder = "31.31.2026"
                     ),
                     OrderItemModel(
-                        110,
-                        "ИвановИвановИвановИвановИвановИвановИвановИвановИванов ",
-                        SUIT,
-                        getCurrentTime(),
-                        "31.31.2026"
+                        idOrder = 110,
+                        idUserOrder = "ИвановИвановИвановИвановИвановИвановИвановИвановИванов ",
+                        idTypeOfClothes = SUIT,
+                        dateStartOrder = getCurrentTime(),
+                        dateEndOrder = "31.31.2026"
                     )
                 )
 
-            )*/
+            )
             repositoryOrderItem.getAllOrderItem().collect { newItems ->
                 _orders.update { newItems }
             }

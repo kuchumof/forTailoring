@@ -1,5 +1,6 @@
 package com.kuchumof.fortailoring.fragments.example_of_works
 
+import android.app.Dialog
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -59,7 +60,7 @@ class FragmentWorkExample : Fragment() {
 
         TabLayoutMediator(tabLayout, viewPager) { tab, position ->
             tab.text = if (position == 0) getText(R.string.Summer) else getText(R.string.Winter)
- //           activeTab = if (position == 0) SeasonEnum.SUMMER else SeasonEnum.WINTER
+            //           activeTab = if (position == 0) SeasonEnum.SUMMER else SeasonEnum.WINTER
         }.attach()
         /**для отображения картинок*/
         tabLayout.getTabAt(0)?.setIcon(R.drawable.ic_summer)
@@ -67,7 +68,7 @@ class FragmentWorkExample : Fragment() {
 
         val viewModel: FolderViewModel by viewModels()
         binding.fActionButton.setOnClickListener {
-                viewModel.addFolder(activeTab)
+            viewModel.addFolder(activeTab)
 
         }
         return binding.root

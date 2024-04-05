@@ -1,25 +1,29 @@
 package com.kuchumof.fortailoring.fragments.example_of_works
 
-import android.app.Application
-import androidx.lifecycle.AndroidViewModel
+
+import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.kuchumof.fortailoring.constant.SeasonEnum
 import com.kuchumof.fortailoring.db.AppDatabase
 import com.kuchumof.fortailoring.model.FolderItemModel
 import com.kuchumof.fortailoring.constant.SeasonEnum.*
-import com.kuchumof.fortailoring.constant.TypeOfClothEnum
 import com.kuchumof.fortailoring.repository.FolderRepository
+import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.flow.update
 import kotlinx.coroutines.launch
 import java.util.UUID
+import javax.inject.Inject
 
-class FolderViewModel(application: Application) : AndroidViewModel(application) {
+// https://rezaramesh.medium.com/room-database-with-hilt-in-kotlin-a-guide-to-store-and-access-data-in-android-c3001e507738
+@HiltViewModel
+class FolderViewModel @Inject constructor(private val repositoryFolder: FolderRepository) :
+    ViewModel() {
 
-    private val db = AppDatabase.getAppDatabase(application)
-    private val repositoryFolder = FolderRepository(db.folderDao())
+    /*private val db = AppDatabase.getAppDatabase(application)
+    private val repositoryFolder = FolderRepository(db.folderDao())*/
 
     //Обёртка для автоматического отслеживания изменения в данных в списке
     /**@param listFolderItemModels.filter - фильтрация элемента в списке*/
