@@ -24,7 +24,7 @@ class MainActivity : AppCompatActivity() {
         setContentView(binding.root)
         setBottomNavigationViewListener()
 
-        binding.bNavMenu.selectedItemId = R.id.fragmentWorkExamples
+        binding.bNavMenu.selectedItemId = R.id.fragmentOrders
 
     }
 

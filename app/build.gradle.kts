@@ -53,8 +53,9 @@ dependencies {
     implementation("androidx.room:room-ktx:2.6.1") // Дополнительно для Kotlin Coroutines, Kotlin Flows
     ksp("androidx.room:room-compiler:2.6.1") // Кодогенератор(распознование анатаций)
     //=============================================================================================
-    implementation("com.google.dagger:hilt-android:2.44")
-    kapt("com.google.dagger:hilt-compiler:2.44")
+    implementation("com.google.dagger:hilt-android:2.51.1")
+    kapt("com.google.dagger:hilt-compiler:2.51.1")
+    kapt("com.google.dagger:hilt-android-compiler:2.51.1")
     //End
 
     implementation("androidx.core:core-ktx:1.12.0")
