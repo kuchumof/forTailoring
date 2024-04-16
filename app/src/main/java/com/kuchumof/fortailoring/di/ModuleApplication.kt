@@ -2,6 +2,7 @@ package com.kuchumof.fortailoring.di
 
 import android.content.Context
 import androidx.room.Room
+import com.kuchumof.fortailoring.ForTailoringApplication
 import com.kuchumof.fortailoring.db.AppDatabase
 import dagger.Module
 import dagger.Provides
@@ -15,6 +16,13 @@ import javax.inject.Singleton
 // components and scopes will be described later
 @InstallIn(SingletonComponent::class)
 object ModuleApplication { // kotlin object is needed
+
+    @Singleton
+    @Provides
+    fun provideApplication(@ApplicationContext app: Context): ForTailoringApplication {
+        return app as ForTailoringApplication
+    }
+
     @Singleton // Tell Dagger-Hilt to create a singleton accessible everywhere in ApplicationComponent (i.e. everywhere in the application)
     @Provides
     fun provideDatabase(
