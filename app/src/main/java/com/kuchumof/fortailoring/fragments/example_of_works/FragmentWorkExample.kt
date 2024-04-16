@@ -14,8 +14,10 @@ import com.kuchumof.fortailoring.R
 import com.kuchumof.fortailoring.adapter.ViewPagerAdapter
 import com.kuchumof.fortailoring.constant.SeasonEnum
 import com.kuchumof.fortailoring.databinding.FragmentWorkExampleBinding
+import dagger.hilt.android.AndroidEntryPoint
 
 
+@AndroidEntryPoint
 //https://medium.com/busoft/how-to-use-viewpager2-with-tablayout-in-android-eaf5b810ef7c
 class FragmentWorkExample : Fragment() {
 

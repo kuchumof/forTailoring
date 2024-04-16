@@ -21,7 +21,7 @@ import javax.inject.Inject
 
 // https://rezaramesh.medium.com/room-database-with-hilt-in-kotlin-a-guide-to-store-and-access-data-in-android-c3001e507738
 @HiltViewModel
-class FolderViewModel @Inject constructor(private val repositoryFolder: FolderRepository) :
+class FolderViewModel @Inject constructor(val repositoryFolder: FolderRepository) :
     ViewModel() {
 
     //https://dev.to/vtsen/convert-flow-to-sharedflow-and-stateflow-on4
