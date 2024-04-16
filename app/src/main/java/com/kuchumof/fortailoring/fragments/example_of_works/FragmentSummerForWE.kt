@@ -1,5 +1,6 @@
 package com.kuchumof.fortailoring.fragments.example_of_works
 
+import android.annotation.SuppressLint
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -12,8 +13,11 @@ import androidx.lifecycle.repeatOnLifecycle
 import androidx.recyclerview.widget.GridLayoutManager
 import com.kuchumof.fortailoring.adapter.FolderListAdapter
 import com.kuchumof.fortailoring.databinding.FragmentSummerForWEBinding
+import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.launch
+import javax.inject.Inject
 
+@AndroidEntryPoint
 class FragmentSummerForWE : Fragment() {
 
     private lateinit var binding: FragmentSummerForWEBinding
@@ -33,8 +37,8 @@ class FragmentSummerForWE : Fragment() {
         //Получение ссылки на экземпляр класса FolderViewModel
         val viewModel: FolderViewModel by viewModels()
         //Подписка на изменение списка
-        lifecycleScope.launch {
-            repeatOnLifecycle(Lifecycle.State.STARTED) {
+        viewLifecycleOwner.lifecycleScope.launch {
+            viewLifecycleOwner.repeatOnLifecycle(Lifecycle.State.STARTED) {
                 /**@param collect - метод возвращает последнее актуальное состояние списка */
                 viewModel.foldersSummer.collect {
                     adapter.submitList(it)

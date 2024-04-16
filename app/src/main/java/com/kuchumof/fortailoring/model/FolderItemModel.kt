@@ -4,14 +4,13 @@ import androidx.room.ColumnInfo
 import androidx.room.Entity
 import androidx.room.PrimaryKey
 import com.kuchumof.fortailoring.constant.SeasonEnum
+import java.util.UUID
 
 //Тестовый комментарий
 @Entity(tableName = "folders")
 data class FolderItemModel(
-    /*TODO
-     генерация uuid*/
-    @PrimaryKey /*(autoGenerate = true)*/
-    val id: Int,
+    @PrimaryKey
+    val id: UUID,
 
     @ColumnInfo(name = "name")
     val name: String,

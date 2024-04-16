@@ -17,8 +17,8 @@ interface FolderDao {
     fun getAllWinter(): Flow<List<FolderItemModel>>
 
     @Insert
-    suspend fun insertAll(users: List<FolderItemModel>)
+    suspend fun insertAll(folders: List<FolderItemModel>)
 
     @Delete
-    suspend fun delete(user: FolderItemModel)
+    suspend fun delete(folders: FolderItemModel)
 }

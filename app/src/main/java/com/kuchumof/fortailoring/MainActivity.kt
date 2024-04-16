@@ -8,8 +8,9 @@ import com.kuchumof.fortailoring.fragments.order.FragmentOrder
 import com.kuchumof.fortailoring.fragments.profile.FragmentProfile
 import com.kuchumof.fortailoring.fragments.settings.FragmentSettings
 import com.kuchumof.fortailoring.fragments.example_of_works.FragmentWorkExample
+import dagger.hilt.android.AndroidEntryPoint
 
-
+@AndroidEntryPoint
 class MainActivity : AppCompatActivity() {
 
     private val fragmentOrder = FragmentOrder()
@@ -24,7 +25,7 @@ class MainActivity : AppCompatActivity() {
         setContentView(binding.root)
         setBottomNavigationViewListener()
 
-        binding.bNavMenu.selectedItemId = R.id.fragmentWorkExamples
+        binding.bNavMenu.selectedItemId = R.id.fragmentOrders
 
     }
 

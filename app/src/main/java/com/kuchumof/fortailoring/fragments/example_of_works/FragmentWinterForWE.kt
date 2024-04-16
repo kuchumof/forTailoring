@@ -12,8 +12,10 @@ import androidx.lifecycle.repeatOnLifecycle
 import androidx.recyclerview.widget.GridLayoutManager
 import com.kuchumof.fortailoring.adapter.FolderListAdapter
 import com.kuchumof.fortailoring.databinding.FragmentWinterForWEBinding
+import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.launch
 
+@AndroidEntryPoint
 class FragmentWinterForWE : Fragment() {
 
     private lateinit var binding: FragmentWinterForWEBinding
@@ -33,8 +35,8 @@ class FragmentWinterForWE : Fragment() {
         //Получение ссылки на экземпляр класса FolderViewModel
         val viewModel: FolderViewModel by viewModels()
         //Подписка на изменение списка
-        lifecycleScope.launch {
-            repeatOnLifecycle(Lifecycle.State.STARTED) {
+        viewLifecycleOwner.lifecycleScope.launch {
+            viewLifecycleOwner.repeatOnLifecycle(Lifecycle.State.STARTED) {
                 /**@param collect - метод возвращает последнее актуальное состояние списка */
                 viewModel.foldersWinter.collect {
                     adapter.submitList(it)
